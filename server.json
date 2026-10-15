@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "ai.klype/klype",
+  "title": "Klype AI",
+  "description": "Voice and context layer: draft, check and approve posts in a real person's measured voice.",
+  "version": "1.0.0",
+  "websiteUrl": "https://klype.ai",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.klype.ai/api/v1/mcp"
+    }
+  ]
+}
