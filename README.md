@@ -1,5 +1,7 @@
 <img src="logo.png" alt="Klype AI" width="96" />
 
+[![Klype AI MCP server on AI Agents Listing](https://aiagentslisting.com/klype-ai-mcp-server/badge.svg?claim=aacf328a70807c3ee6fb419c18a74056)](https://aiagentslisting.com/mcp/klype-ai-mcp-server)
+
 # Klype AI MCP server
 
 Klype is a voice and context layer for GTM teams. It stores a company's product, buyer and voice context once, measures how a real person writes, and makes every AI-drafted post or message sound like that person before it goes out. Nothing publishes without the owner's approval.
