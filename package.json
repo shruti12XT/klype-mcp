@@ -1,0 +1,39 @@
+{
+  "name": "klype-mcp",
+  "version": "1.0.0",
+  "description": "Klype AI MCP server over stdio: draft, check and approve posts against a company's saved facts and a real person's voice.",
+  "bin": {
+    "klype-mcp": "bin/klype-mcp.js"
+  },
+  "files": [
+    "bin",
+    "server.json",
+    "logo.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "klype",
+    "fact-checking",
+    "content-review",
+    "brand-voice",
+    "gtm"
+  ],
+  "homepage": "https://klype.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shruti12XT/klype-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shruti12XT/klype-mcp/issues"
+  },
+  "author": "Shruti Kaushik <shruti@klype.ai>",
+  "license": "MIT",
+  "mcpName": "ai.klype/klype"
+}

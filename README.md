@@ -44,6 +44,20 @@ This is the remote MCP server for Klype. Connect it to Claude, ChatGPT, Cursor, 
 
 Create an API key in Klype at app.klype.ai/dashboard/connections, and pick only the scopes you need.
 
+**Clients that only run local (stdio) servers:** use the npm bridge. It relays to the hosted server, so there is nothing else to run.
+
+```json
+{
+  "mcpServers": {
+    "klype": {
+      "command": "npx",
+      "args": ["-y", "klype-mcp"],
+      "env": { "KLYPE_API_KEY": "klp_live_YOUR_KEY" }
+    }
+  }
+}
+```
+
 **Raw HTTP:**
 
 ```bash
@@ -74,5 +88,9 @@ The same capabilities are available as REST under `https://api.klype.ai/api/v1/p
 - [Smithery](https://smithery.ai)
 - Listed in the [Claude Market MCP directory](https://www.claudemarket.ai/mcp)
 
-This repository documents the hosted server. The server itself runs at `https://api.klype.ai/api/v1/mcp`; there is nothing to install.
+This repository documents the hosted server and ships `klype-mcp`, a dependency-free stdio bridge to it (Node 18+). The server itself runs at `https://api.klype.ai/api/v1/mcp`.
+
+## License
+
+MIT for the code in this repository. The hosted Klype service, its data and the Klype name and logo are not covered by this license.
 
