@@ -1,5 +1,5 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ai.klype/klype",
   "title": "Klype AI",
   "description": "Voice and context layer: draft, check and approve posts in a real person's measured voice.",
@@ -8,7 +8,15 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://api.klype.ai/api/v1/mcp"
+      "url": "https://api.klype.ai/api/v1/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional. Bearer klp_live_... API key from app.klype.ai, Dashboard, Connections. Leave empty to sign in with OAuth instead.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
     }
   ],
   "packages": [
