@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "klype-pipeline": {
-      "type": "http",
-      "url": "https://api.klype.ai/api/v1/mcp/pipeline"
-    }
-  }
-}

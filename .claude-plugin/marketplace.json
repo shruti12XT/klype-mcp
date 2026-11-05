@@ -25,12 +25,6 @@
       "source": "./plugins/klype-gtm-planner",
       "description": "See what go-to-market work is due today and what has worked.",
       "version": "1.0.0"
-    },
-    {
-      "name": "klype-pipeline",
-      "source": "./plugins/klype-pipeline",
-      "description": "Review and decide the week's prepared Klype Agent items.",
-      "version": "1.0.0"
     }
   ]
 }
