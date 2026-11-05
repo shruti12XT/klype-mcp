@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "klype-voice": {
+      "type": "http",
+      "url": "https://api.klype.ai/api/v1/mcp/voice"
+    }
+  }
+}

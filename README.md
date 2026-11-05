@@ -25,6 +25,19 @@ This is the remote MCP server for Klype. Connect it to Claude, ChatGPT, Cursor, 
 | `list_approvals` | Returns the owner's approval record. | approvals:read | yes |
 | `get_performance_insights` | What has actually performed for the owner, from imported post results. | context:read | yes |
 
+## Plugins
+
+Four focused connectors run on the same server, OAuth and Klype account. Each has its own listing and a Claude Code plugin under `plugins/`; `marketplace.json` lists all four. Listing copy is in [LISTINGS.md](LISTINGS.md).
+
+| Plugin | Endpoint | Tools | Access |
+| --- | --- | --- | --- |
+| Klype Check | `/api/v1/mcp/check` | `review_draft`, `get_workspace_context`, `list_workspaces` | Free |
+| Klype Voice | `/api/v1/mcp/voice` | `draft_post`, `review_draft`, `get_workspace_context`, `list_workspaces`, `approve_draft`, `list_approvals` | Requires a Klype plan |
+| Klype GTM Planner | `/api/v1/mcp/planner` | `get_todays_plan`, `get_performance_insights`, `get_workspace_context`, `list_workspaces` | Requires a Klype plan |
+| Klype Pipeline | `/api/v1/mcp/pipeline` | `list_agent_items`, `get_agent_item`, `approve_agent_item`, `skip_agent_item`, `get_workspace_context`, `list_workspaces` | Requires a Klype plan and Klype Agent access |
+
+Install in Claude Code: `/plugin marketplace add shruti12XT/klype-mcp`, then `/plugin install klype-check@klype`. The full server at `/api/v1/mcp` is unchanged and keeps every tool.
+
 ## Connect
 
 **Claude (claude.ai or Claude Desktop):** Settings > Connectors > Add custom connector > paste `https://api.klype.ai/api/v1/mcp` and sign in to Klype.

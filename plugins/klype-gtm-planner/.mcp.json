@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "klype-gtm-planner": {
+      "type": "http",
+      "url": "https://api.klype.ai/api/v1/mcp/planner"
+    }
+  }
+}

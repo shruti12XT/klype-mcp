@@ -1,0 +1,36 @@
+{
+  "name": "klype",
+  "owner": {
+    "name": "Shruti Kaushik",
+    "email": "shruti@klype.ai"
+  },
+  "metadata": {
+    "description": "Klype plugins for founder-led GTM: check, draft, plan and review in your own voice."
+  },
+  "plugins": [
+    {
+      "name": "klype-check",
+      "source": "./plugins/klype-check",
+      "description": "Check any draft against your saved voice and facts before it goes out.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "klype-voice",
+      "source": "./plugins/klype-voice",
+      "description": "Draft posts in your own measured voice, check them and record your approval.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "klype-gtm-planner",
+      "source": "./plugins/klype-gtm-planner",
+      "description": "See what go-to-market work is due today and what has worked.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "klype-pipeline",
+      "source": "./plugins/klype-pipeline",
+      "description": "Review and decide the week's prepared Klype Agent items.",
+      "version": "1.0.0"
+    }
+  ]
+}
