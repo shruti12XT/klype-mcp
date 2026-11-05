@@ -34,7 +34,6 @@ Four focused connectors run on the same server, OAuth and Klype account. Each ha
 | Klype Check | `/api/v1/mcp/check` | `review_draft`, `get_workspace_context`, `list_workspaces` | Free |
 | Klype Voice | `/api/v1/mcp/voice` | `draft_post`, `review_draft`, `get_workspace_context`, `list_workspaces`, `approve_draft`, `list_approvals` | Requires a Klype plan |
 | Klype GTM Planner | `/api/v1/mcp/planner` | `get_todays_plan`, `get_performance_insights`, `get_workspace_context`, `list_workspaces` | Requires a Klype plan |
-| Klype Pipeline | `/api/v1/mcp/pipeline` | `list_agent_items`, `get_agent_item`, `approve_agent_item`, `skip_agent_item`, `get_workspace_context`, `list_workspaces` | Requires a Klype plan and Klype Agent access |
 
 Install in Claude Code: `/plugin marketplace add shruti12XT/klype-mcp`, then `/plugin install klype-check@klype`. The full server at `/api/v1/mcp` is unchanged and keeps every tool.
 

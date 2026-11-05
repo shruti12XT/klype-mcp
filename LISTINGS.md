@@ -37,15 +37,3 @@ Ready to paste into each directory form. Endpoints are on the same Klype server 
   3. What kinds of posts have worked best for me so far?
 - **Pricing text:** Requires a Klype plan
 - **Endpoint:** https://api.klype.ai/api/v1/mcp/planner
-
-## Klype Pipeline
-
-- **Name:** Klype Pipeline
-- **One line:** Review and decide the week's prepared Klype Agent items.
-- **Description (under 300 characters):** Go through the items Klype Agent prepared for the week: warm buyers, public asks, posts, Reddit answers and local actions. Read each in full, then approve or skip. Nothing is sent or published. Needs a Klype plan or trial and access to Klype Agent.
-- **Example prompts:**
-  1. Show me this week's Klype Agent items grouped by type.
-  2. Open the first warm buyer item and tell me why it is in my week.
-  3. Skip the second Reddit answer, it is off topic for us.
-- **Pricing text:** Requires a Klype plan
-- **Endpoint:** https://api.klype.ai/api/v1/mcp/pipeline
