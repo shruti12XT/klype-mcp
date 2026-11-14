@@ -9,7 +9,7 @@ For directory reviewers (Claude, ChatGPT apps and others). Each case gives a pro
 - **Privacy policy:** https://klype.ai/privacy/
 - **Documentation:** https://klype.ai/docs/mcp/
 
-Klype never publishes, schedules for publishing or sends. In every case below, nothing leaves Klype: results are drafts or plans for the account owner to use. Cases 1, 5 and 8 spend no credits. Case 3 spends credits unless it is the account's free first plan.
+Klype never publishes, schedules for publishing or sends. In every case below, nothing leaves Klype: results are drafts or plans for the account owner to use. Cases 1, 5, 6 and 9 spend no credits. Case 3 spends credits unless it is the account's free first plan; cases 2, 4, 7 and 8 spend credits.
 
 ## Cases
 
