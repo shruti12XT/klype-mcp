@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ai.klype/klype",
   "title": "Klype AI",
-  "description": "Voice and context layer: draft, check and approve posts in a real person's measured voice.",
-  "version": "1.0.1",
+  "description": "GTM context layer: plan, draft, check, calendar and distribute posts in a real person's voice.",
+  "version": "1.1.0",
   "websiteUrl": "https://klype.ai",
   "remotes": [
     {
@@ -23,7 +23,7 @@
     {
       "registryType": "npm",
       "identifier": "klype-mcp",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "transport": {
         "type": "stdio"
       },
