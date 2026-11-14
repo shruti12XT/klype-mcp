@@ -14,5 +14,7 @@
     "mcp",
     "gtm",
     "linkedin"
-  ]
+  ],
+  "icon": ".claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://klype.ai/privacy/"
 }
