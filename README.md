@@ -15,19 +15,32 @@ This is the remote MCP server for Klype. Connect it to Claude, ChatGPT, Cursor, 
 
 ## Tools
 
+Fifteen tools. Every result has a short summary, structured data and a `next` hint. Nothing publishes, schedules for publishing or sends. `approve_draft` records the owner's approval and nothing else. Each tool has a title and MCP annotations.
+
 | Tool | What it does | Scope | Read-only |
 | --- | --- | --- | --- |
-| `list_workspaces` | Lists the business workspaces saved in Klype. Each holds one company's product, buyer and voice context. | context:read | yes |
-| `get_workspace_context` | Returns the saved product, buyer and voice context for one workspace. | context:read | yes |
-| `draft_post` | Drafts a post in the owner's measured voice, grounded in a workspace. Never publishes. | drafts:write | no |
-| `review_draft` | Checks any text against the owner's voice, saved facts and rules. Returns a score, a verdict and fixes. | context:read | yes |
-| `approve_draft` | Records that the owner approved the checked text. | drafts:write | no |
+| `list_workspaces` | Lists the business workspaces saved in Klype, with ids. Call it first. | context:read | yes |
+| `get_workspace_context` | Returns the saved voice, product facts, buyer and positioning for one workspace, with context_status gaps. | context:read | yes |
+| `get_todays_plan` | GTM work due today and over the next days, with a status and suggested action per item. | context:read | yes |
+| `draft_post` | Drafts a post in the owner's measured voice, grounded in a workspace. | drafts:write | no |
+| `review_draft` | Checks any text against the owner's voice, saved facts and rules. Returns a score, a verdict and fixes. | context:read | no |
+| `approve_draft` | Records that the owner approved the checked text. Owner-only. | drafts:write | no |
 | `list_approvals` | Returns the owner's approval record. | approvals:read | yes |
-| `get_performance_insights` | What has actually performed for the owner, from imported post results. | context:read | yes |
+| `get_performance_insights` | What has performed for the owner, from imported post results: format, length, day, edits, top posts. | context:read | yes |
+| `get_gtm_plan` | Reads the saved GTM plan (ICP, positioning, channels, timeline) and whether the next plan is free. | context:read | yes |
+| `generate_gtm_plan` | Builds and saves a GTM plan with a 14-day timeline. Free for the first plan, credits after. | drafts:write | no |
+| `capture_to_post` | Turns a video link or a pasted transcript into a draft for a chosen platform. | drafts:write | no |
+| `distribute_post` | Repurposes an approved post into other formats, matched communities and email follow-ups. | drafts:write | no |
+| `get_calendar` | Calendar posts and drafts for a date range. | context:read | yes |
+| `plan_fortnight` | Proposes dated post slots for the next 14 days. Saves nothing. | drafts:write | no |
+| `schedule_draft` | Places a draft on a day in the calendar plan. The post stays a draft. | drafts:write | no |
+| `get_ai_visibility` | Latest AI Visibility run summary. Listed only where the feature is on. | context:read | yes |
+
+Full documentation, with an example prompt for every tool: https://klype.ai/docs/mcp/. Test prompts for reviewers: [docs/REVIEW-TEST-CASES.md](docs/REVIEW-TEST-CASES.md).
 
 ## Plugins
 
-Four focused connectors run on the same server, OAuth and Klype account. Each has its own listing and a Claude Code plugin under `plugins/`; `marketplace.json` lists all four. Listing copy is in [LISTINGS.md](LISTINGS.md).
+Three focused connectors run on the same server, OAuth and Klype account. Each has its own listing and a Claude Code plugin under `plugins/`; `marketplace.json` lists all three. Listing copy is in [LISTINGS.md](LISTINGS.md).
 
 | Plugin | Endpoint | Tools | Access |
 | --- | --- | --- | --- |
@@ -35,7 +48,7 @@ Four focused connectors run on the same server, OAuth and Klype account. Each ha
 | Klype Voice | `/api/v1/mcp/voice` | `draft_post`, `review_draft`, `get_workspace_context`, `list_workspaces`, `approve_draft`, `list_approvals` | Requires a Klype plan |
 | Klype GTM Planner | `/api/v1/mcp/planner` | `get_todays_plan`, `get_performance_insights`, `get_workspace_context`, `list_workspaces` | Requires a Klype plan |
 
-Install in Claude Code: `/plugin marketplace add shruti12XT/klype-mcp`, then `/plugin install klype-check@klype`. The full server at `/api/v1/mcp` is unchanged and keeps every tool.
+Install in Claude Code: `/plugin marketplace add shruti12XT/klype-mcp`, then `/plugin install klype-check@klype`. The full server at `/api/v1/mcp` keeps every tool, including the planning, capture, distribution and calendar tools that the plugins do not list.
 
 ## Connect
 
@@ -85,13 +98,15 @@ The same capabilities are available as REST under `https://api.klype.ai/api/v1/p
 
 ## Limits
 
-360 MCP calls per hour per key (about 120 drafts). Draft generation draws on the account's Klype credits.
+360 MCP calls per hour per key (about 120 drafts). Drafting, capture, distribution, planning and GTM plan generation draw on the account's Klype credits; the first GTM plan on an account is free. Reading tools do not spend credits.
 
 ## Links
 
 - Website: https://klype.ai
 - App: https://app.klype.ai
-- Support: shruti@klype.ai
+- Documentation: https://klype.ai/docs/mcp/
+- Support: admin@klype.ai (https://klype.ai/support/)
+- Privacy policy: https://klype.ai/privacy/
 
 ## Listed in
 

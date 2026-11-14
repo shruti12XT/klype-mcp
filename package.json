@@ -1,7 +1,7 @@
 {
   "name": "klype-mcp",
-  "version": "1.0.0",
-  "description": "Klype AI MCP server over stdio: draft, check and approve posts against a company's saved facts and a real person's voice.",
+  "version": "1.1.0",
+  "description": "Klype AI MCP server over stdio: plan, draft, capture, check, calendar and distribute posts against a company's saved facts and a real person's voice.",
   "bin": {
     "klype-mcp": "bin/klype-mcp.js"
   },
